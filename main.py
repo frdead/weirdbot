@@ -62,8 +62,10 @@ class MUCBot(sleekxmpp.ClientXMPP):
 										wait=True)
 
 	def muc_message(self, msg):
-		logfile = "log.txt"
-		logfile2 = open(logfile, 'a')
+		logfile = "logs/" + str(msg['from']).split("/")[0] + "/log.txt"
+		if not os.path.exists(logfile.split("log.txt")[0]):
+    			os.makedirs(logfile.split("log.txt")[0])
+		logfile2 = open(logfile, 'a+')
 		if logmode==1:
 			if msg['body'] != "":
 				logfile2.write(msg['mucnick'] + ": " + msg['body'] + "\n")

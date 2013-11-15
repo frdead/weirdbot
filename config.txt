@@ -1,9 +1,0 @@
-# Weirdbot configuration
-
-{
-'JID': 'jid@server.me',
-'PASS': 'geniuspassword',
-'DEFAULT_ROOM': 'room@conference.server.me',
-'NICKNAME': 'Weirdbot',
-'LOGMODE': '1',
-}

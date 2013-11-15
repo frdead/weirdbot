@@ -27,7 +27,7 @@ if sys.version_info < (3, 0):
 else:
 	raw_input = input
 
-class MUCBot(sleekxmpp.ClientXMPP):
+class WeirdBot(sleekxmpp.ClientXMPP):
 	def __init__(self, jid, password, room, nick, log):
 		sleekxmpp.ClientXMPP.__init__(self, jid, password)
 
@@ -87,7 +87,7 @@ class MUCBot(sleekxmpp.ClientXMPP):
 		pass
 
 if __name__ == '__main__':
-	configfile = "config.txt"
+	configfile = "conf/config"
 	f1 = open(configfile, 'r')
 	getc = eval(f1.read())
 	f1.close()
@@ -122,7 +122,7 @@ if __name__ == '__main__':
 	if opts.log is None:
 		opts.log = 0
 
-	xmpp = MUCBot(opts.jid, opts.password, opts.room, opts.nick, opts.log)
+	xmpp = WeirdBot(opts.jid, opts.password, opts.room, opts.nick, opts.log)
 	xmpp.register_plugin('xep_0030') # Service Discovery
 	xmpp.register_plugin('xep_0045') # Multi-User Chat
 	xmpp.register_plugin('xep_0199') # XMPP Ping

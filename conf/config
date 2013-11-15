@@ -1,0 +1,9 @@
+# Weirdbot configuration
+
+{
+'JID': 'bot@pztrn.name',
+'PASS': 'pozitpoh1992',
+'DEFAULT_ROOM': 'main@conference.pztrn.name',
+'NICKNAME': 'Weirdbot',
+'LOGMODE': '0',
+}
